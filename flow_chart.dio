@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="L15tOZfDJ0sB663_3Ugt" name="ページ1">
-        <mxGraphModel dx="566" dy="1566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="548" dy="1509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -50,7 +50,7 @@
                         <mxPoint x="912" y="220" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="11" target="24">
+                <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="11" target="24" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="ログイン&lt;br&gt;&lt;br&gt;パスワード&lt;br&gt;ユーザー名&lt;br&gt;&lt;br&gt;ひろみ" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
@@ -79,8 +79,14 @@
                 <mxCell id="23" value="機能名：ユーザーページ&lt;br&gt;&lt;br&gt;処理内容：ユーザーの情報を取得、ユーザーの情報を表示、各操作へのリンクを表示&lt;br&gt;データの取得元：ユーザ情報を補完するDB、ページのhtml&lt;br&gt;ユーザーが行う操作：ページの閲覧、各リンクを踏む、" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" parent="1" vertex="1">
                     <mxGeometry x="1010" y="-170" width="380" height="220" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="機能名：ログイン&lt;br&gt;処理内容：入力されたパスワードとユーザー名をDBと照合&lt;br&gt;データの取得元：ユーザー情報を補完するDB、ｈｔｍｌ、必要な場合のＡＰＩ&lt;br&gt;ユーザーが行う操作：ユーザー名、パスワードの入力の後、ログインボタンをクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" vertex="1" parent="1">
+                <mxCell id="24" value="機能名：ログイン&lt;br&gt;処理内容：入力されたパスワードとユーザー名をDBと照合&lt;br&gt;データの取得元：ユーザー情報を補完するDB、ｈｔｍｌ、必要な場合のＡＰＩ&lt;br&gt;ユーザーが行う操作：ユーザー名、パスワードの入力の後、ログインボタンをクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" parent="1" vertex="1">
                     <mxGeometry x="702" y="-150" width="278" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="機能名：ホーム画面&lt;br&gt;処理内容：検索条件をもとにDBから単語を検索&lt;br&gt;単語表示（順番：五十音orアクセス数？？）&lt;br&gt;&lt;br&gt;データの取得元：DBから取得&lt;br&gt;&lt;br&gt;ユーザーが行う操作：検索窓に単語入力&lt;br&gt;並んだ単語をクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="-150" width="308" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="機能名：選択された単語ページ表示&lt;br&gt;&lt;br&gt;処理内容：&lt;br&gt;DBから検索結果を受け取る&lt;br&gt;検索結果表示&lt;br&gt;選択された単語情報をDBから受け取る&lt;br&gt;単語の解説をDBから受け取る&lt;br&gt;&lt;br&gt;データの取得元：&lt;br&gt;DBから取得（単語&amp;amp;解説）&lt;br&gt;&lt;br&gt;ユーザーが行う操作：解説をクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0.52;direction=south;" vertex="1" parent="1">
+                    <mxGeometry x="426" y="482" width="254" height="250" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
