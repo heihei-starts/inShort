@@ -1,68 +1,92 @@
 <mxfile host="65bd71144e">
     <diagram id="L15tOZfDJ0sB663_3Ugt" name="ページ1">
-        <mxGraphModel dx="2050" dy="1438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="548" dy="1509" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="ホーム画面&lt;br&gt;&lt;br&gt;検索窓&lt;br&gt;&lt;br&gt;単語がずらり" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="2" value="ホーム画面&lt;br&gt;&lt;br&gt;検索窓&lt;br&gt;&lt;br&gt;単語がずらり&lt;br&gt;&lt;br&gt;&lt;br&gt;ひらまつ" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="210" y="50" width="290" height="290" as="geometry"/>
                 </mxCell>
-                <mxCell id="4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2">
+                <mxCell id="4" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="2" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="350" y="410" as="sourcePoint"/>
                         <mxPoint x="350" y="480" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="5" value="単語&lt;br&gt;&lt;br&gt;&lt;br&gt;解説&lt;br&gt;解説&lt;br&gt;解説" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
-                    <mxGeometry x="220" y="480" width="205" height="205" as="geometry"/>
+                <mxCell id="5" value="単語&lt;br&gt;&lt;br&gt;&lt;br&gt;解説&lt;br&gt;解説&lt;br&gt;解説&lt;br&gt;&lt;br&gt;ひらまつ" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="221" y="482" width="205" height="205" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="5" target="7">
+                <mxCell id="6" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="5" target="7" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="390" y="860" as="sourcePoint"/>
                         <mxPoint x="323" y="810" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="7" value="単語の解説&lt;br&gt;&lt;br&gt;&lt;br&gt;書き込むアイコン" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="7" value="単語の解説&lt;br&gt;&lt;br&gt;&lt;br&gt;書き込むアイコン&lt;br&gt;&lt;br&gt;りょーへい" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="210" y="820" width="232.5" height="232.5" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="" style="endArrow=classic;html=1;" edge="1" parent="1" target="9">
+                <mxCell id="8" value="" style="endArrow=classic;html=1;" parent="1" target="9" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="442.5" y="940" as="sourcePoint"/>
                         <mxPoint x="493" y="940" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="9" value="解説&lt;br&gt;&lt;br&gt;&lt;br&gt;投稿" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="9" value="解説&lt;br&gt;&lt;br&gt;&lt;br&gt;投稿&lt;br&gt;&lt;br&gt;りょーへい" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="530" y="866.25" width="140" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="ユーザーページ&lt;br&gt;&lt;br&gt;ユーザー名&lt;br&gt;過去の投稿一覧&lt;br&gt;ログアウト" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="10" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="ユーザーページ&lt;br&gt;&lt;br&gt;ユーザー名&lt;br&gt;過去の投稿一覧&lt;br&gt;ログアウト&lt;br&gt;s&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="960" y="50" width="340" height="340" as="geometry"/>
                 </mxCell>
-                <mxCell id="14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="11">
+                <mxCell id="14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="11" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="762" y="400" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="11" target="10">
+                <mxCell id="19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="11" target="10" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="912" y="220" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="11" value="ログイン&lt;br&gt;&lt;br&gt;パスワード&lt;br&gt;ユーザー名" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="11" target="24" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="ログイン&lt;br&gt;&lt;br&gt;パスワード&lt;br&gt;ユーザー名&lt;br&gt;&lt;br&gt;ひろみ" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="697" y="155" width="130" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="" style="endArrow=classic;html=1;entryX=0.012;entryY=0.623;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="11">
+                <mxCell id="12" value="" style="endArrow=classic;html=1;entryX=0.012;entryY=0.623;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="11" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="500" y="240" as="sourcePoint"/>
                         <mxPoint x="550" y="190" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="15">
+                <mxCell id="17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="15" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="970" y="380" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="15" value="登録画面&lt;br&gt;&lt;br&gt;名前&lt;br&gt;パスワード&lt;br&gt;e-mail&lt;br&gt;twitter,google API" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="15" value="登録画面&lt;br&gt;&lt;br&gt;名前&lt;br&gt;パスワード&lt;br&gt;e-mail&lt;br&gt;twitter,google API" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
                     <mxGeometry x="707" y="390" width="110" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="ログインした状態" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1070" y="610" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="機能名&lt;br&gt;&lt;br&gt;処理内容&lt;br&gt;処理に必要なデータ&lt;br&gt;データの取得元&lt;br&gt;&lt;br&gt;ユーザーが行い操作" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+                    <mxGeometry x="1370" y="70" width="350" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="機能名：ユーザーページ&lt;br&gt;&lt;br&gt;処理内容：ユーザーの情報を取得、ユーザーの情報を表示、各操作へのリンクを表示&lt;br&gt;データの取得元：ユーザ情報を補完するDB、ページのhtml&lt;br&gt;ユーザーが行う操作：ページの閲覧、各リンクを踏む、" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" parent="1" vertex="1">
+                    <mxGeometry x="1010" y="-170" width="380" height="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="機能名：ログイン&lt;br&gt;処理内容：入力されたパスワードとユーザー名をDBと照合&lt;br&gt;データの取得元：ユーザー情報を補完するDB、ｈｔｍｌ、必要な場合のＡＰＩ&lt;br&gt;ユーザーが行う操作：ユーザー名、パスワードの入力の後、ログインボタンをクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" parent="1" vertex="1">
+                    <mxGeometry x="702" y="-150" width="278" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="機能名：ホーム画面&lt;br&gt;処理内容：検索条件をもとにDBから単語を検索&lt;br&gt;単語表示（順番：五十音orアクセス数？？）&lt;br&gt;&lt;br&gt;データの取得元：DBから取得&lt;br&gt;&lt;br&gt;ユーザーが行う操作：検索窓に単語入力&lt;br&gt;並んだ単語をクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="-150" width="308" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="機能名：選択された単語ページ表示&lt;br&gt;&lt;br&gt;処理内容：&lt;br&gt;DBから検索結果を受け取る&lt;br&gt;検索結果表示&lt;br&gt;選択された単語情報をDBから受け取る&lt;br&gt;単語の解説をDBから受け取る&lt;br&gt;&lt;br&gt;データの取得元：&lt;br&gt;DBから取得（単語&amp;amp;解説）&lt;br&gt;&lt;br&gt;ユーザーが行う操作：解説をクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;position2=0.52;direction=south;" vertex="1" parent="1">
+                    <mxGeometry x="426" y="482" width="254" height="250" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
