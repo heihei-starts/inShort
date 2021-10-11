@@ -92,7 +92,7 @@
                     <mxGeometry x="190" y="1053" width="260" height="137" as="geometry"/>
                 </mxCell>
                 <mxCell id="52" value="dbへ検索" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="490" y="740" width="120" height="60" as="geometry"/>
+                    <mxGeometry x="450" y="740" width="120" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="53" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -104,7 +104,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="54" value="dbへ投稿" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="690" y="780" width="90" height="60" as="geometry"/>
+                    <mxGeometry x="640" y="780" width="90" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="55" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -112,8 +112,8 @@
                         <mxPoint x="720" y="840" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="56" value="機能名：単語解説投稿&lt;br&gt;処理内容：入力内容を単語と紐づけてDBに登録。&lt;br&gt;処理に必要なデータ：単語情報&lt;br&gt;登録したら、解説のページに遷移。&lt;br&gt;ユーザーの操作：解説内容の入力、投稿ボタンをクリック" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=west;" vertex="1" parent="1">
-                    <mxGeometry x="530" y="1006.25" width="260" height="143.75" as="geometry"/>
+                <mxCell id="56" value="" style="shape=callout;whiteSpace=wrap;html=1;perimeter=calloutPerimeter;direction=west;" vertex="1" parent="1">
+                    <mxGeometry x="530" y="1006.25" width="200" height="80" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
