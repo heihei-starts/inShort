@@ -47,5 +47,13 @@ class WordManageSql(ObjectManageSql):
 
             cursor.close()
         
-        return success
+        return "success"
+   
+# query = "insert into in_short.words (word_name, field_id) values (%s, %s)"
+# word = "OSI参照モデル"
+# field_id = 2
+# hei = WordManageSql()
+# result = hei.insert_word(query, word, field_id)
+# print(result)
+
 

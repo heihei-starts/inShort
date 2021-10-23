@@ -30,9 +30,9 @@ def post_word_info():
     
     #単語削除
     try:
-        query = "delete hogehoge;"
+        query = "delete from in_short.words where word_name = %s; AND field_id = %s"
 
-        result = sqlClass.delete_word(query, word_id)
+        result = sqlClass.delete_word(query, word_name, field_id)
 
         body = {'message': result}
 
