@@ -9,9 +9,7 @@ import sys
 sys.path.append(os.path.abspath(".."))
 
 #modules呼び出し
-from modules import wordManageSql
-
-
+from modules.wordManageSql import WordManageSql
 #ステータスコード 
 HTTP_OK = 200
 HTTP_BAD_REQUEST = 400
@@ -26,16 +24,14 @@ CORS(app, origins=["http://localhost:8080"])
 def get_words():
 
     #sqlオブジェクト呼び出し
-    sqlClass = wordManageSql.WordManageSql()
+    sqlClass = WordManageSql()
     #全件取得
     try:
         query = "SELECT word_name,field_id from in_short.words; "
         result = sqlClass.selectAllWords(query)
-
+        print(result)
         body = {'message': "全件取得完了", "words": result}
-
         return jsonify(body),HTTP_OK
-    
     except Exception as e:
         print("Exception error get_words")
         print(e)
@@ -44,6 +40,7 @@ def get_words():
 
     finally:
         #コネクション接続解除
+        
         sqlClass.closeConnection()
     
 
@@ -53,7 +50,7 @@ def get_words():
 def post_word():
     
 
-    #wordManagesqlオブジェクト呼び出し
+    #wordManagesqlインスタンス呼び出し
     sqlClass = wordManageSql.WordManageSql()
 
     #リクエスト取得
@@ -78,7 +75,7 @@ def post_word():
     finally:
         #コネクション接続解除
         sqlClass.closeConnection()
-
+            
 
 
 if __name__ == "__main__":

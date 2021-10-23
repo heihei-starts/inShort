@@ -17,7 +17,7 @@ class ObjectManageSql(object):
         self.__password   = os.getenv('PASS')
         self.__db         = os.getenv('DB')
         
-        self._connection = pymysql.connect(
+        self.connection = pymysql.connect(
            host     = self.__host,
            port     = self.__port,
            user     = self.__user,
@@ -25,12 +25,12 @@ class ObjectManageSql(object):
            db       = self.__db)
 
     
+    # @property
+    # def connection(self):
+    #     return self._connection
 
-    @property
-    def connection(self):
-       return self._connection
+    
 
     #接続解除
     def closeConnection(self):
-        self.connection.close()
-        print("close")
+        self.__connection.close()

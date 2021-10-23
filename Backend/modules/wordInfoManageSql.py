@@ -1,9 +1,26 @@
 from flask import Flask, jsonify
-from objectManageSql import ObjectManageSql
+from modules.objectManageSql import ObjectManageSql
 
-class WordInfoManageSql(object):
+class WordInfoManageSql(ObjectManageSql):
 
+    
+    #単語情報取得
+    def get_words_info(self, query, word_id):
 
+        #カーソルオブジェクト呼び出し
+        cursor = self.connection.cursor()
+
+        #単語解説取得
+        try:
+            cursor.execute(query, (word_id))
+            result = cursor.fetchall()
+        except Exception as e:
+            print("Exception error get_words_info()")
+            print(e)
+        finally:
+            cursor.close()
+
+        return result
 
     #単語情報投稿
     def post_word_info(self, query, user_id, word_id, explanation):

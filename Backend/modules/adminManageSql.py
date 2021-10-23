@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from objectManageSql import ObjectManageSql
+from modules.objectManageSql import ObjectManageSql
 #ローカル上で、githubにあげないものの管理
 
 class AdminManageSql(ObjectManageSql):
