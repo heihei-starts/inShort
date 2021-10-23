@@ -1,31 +1,8 @@
 from flask import Flask, jsonify
+from objectManageSql import ObjectManageSql
 
-#ローカル上で、githubにあげないものの管理----
-from dotenv import load_dotenv
-import os
-#------------
 
-import pymysql
-
-load_dotenv()
-
-class WordManageSql(object):
-
-    #コンストラクタ
-    def __init__(self):
-        self.host       = os.getenv('HOST')
-        self.port       = int(os.getenv('PORT'))
-        self.user       = os.getenv('USE')
-        self.password   = os.getenv('PASS')
-        self.db         = os.getenv('DB')
-
-        #インスタンス呼び出し時に、mysql接続
-        self.connection = pymysql.connect(
-            host     = self.host,
-            port     = self.port,
-            user     = self.user,
-            password = self.password,
-            db       = self.db)
+class WordManageSql(ObjectManageSql):
 
     
     #単語取得
@@ -72,6 +49,3 @@ class WordManageSql(object):
         
         return success
 
-    #接続解除
-    def closeConnection(self):
-        self.connection.close()
