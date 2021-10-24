@@ -65,7 +65,7 @@ def post_word():
     #単語追加
     try:
         query = "INSERT INTO in_short.words (word_name, field_id) VALUES (%s,%s);"
-        result = sqlClass.insert_word(query, word_name, field_id)
+        result = sqlClass.insert_word(word_name, field_id)
 
         body = {'message': '単語追加完了'}
         return jsonify(body), HTTP_OK

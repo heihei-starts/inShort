@@ -41,6 +41,9 @@ class WordManageSql(ObjectManageSql):
             cursor.execute(query,(word, field_id))
             self.connection.commit()
         except Exception as e:
+            #ロールバック   
+            self.connection.rollback()
+
             print("Exception error insert_word()")
             print(e)
         finally:
