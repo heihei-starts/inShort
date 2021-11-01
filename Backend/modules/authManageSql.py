@@ -1,4 +1,4 @@
-from import Flask, jsonify
+from flask import Flask, jsonify
 from modules.objectManageSql import ObjectManageSql
 
 class AuthManageSql(ObjectManageSql):
@@ -34,8 +34,8 @@ class AuthManageSql(ObjectManageSql):
 
             result = cursor.fetchone()
         except Exception as e:
-            print("Exception error check_user")
-            prnt(e)
+            print("Exception error check_user()")
+            print(e)
         finally:
             cursor.close()
 
