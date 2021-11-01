@@ -19,8 +19,12 @@ class AdminManageSql(ObjectManageSql):
             if result is None:
                 return "nothing"
         except Exception as e:
+            #ロールバック
+            self.connection.rollback()
+
             print("Exception error delete_word()")
             print(e)
+
 
         finally:
             cursor.close()

@@ -34,6 +34,10 @@ class WordInfoManageSql(ObjectManageSql):
             cursor.execute(query, (user_id, word_id, explanation))
             self.connection.commit()
         except Exception as e:
+
+            #トランザクション
+            self.connection.rollback()
+
             print("Exception error post_word_info()")
             print(e)
 
@@ -41,8 +45,45 @@ class WordInfoManageSql(ObjectManageSql):
             cursor.close()
 
         return "ok"
+    
 
+    #単語情報削除
+    def delete_word_info(self, query,  explanation_id):
 
+        #カーソルオブジェクト呼び出し
+        cursor = self.connection.cursor()
+
+        #単語解説削除
+        try:
+            cursor.execute(query, (explanation_id))
+            self.connection.commit()
+        except Exception as e:
+            print("Exception error delete_word_info()")
+            print(e)
+
+        finally:
+            cursor.close()
+
+        return "delete success"
+
+    #単語情報改稿
+    def update_word_info(self, query, change_explanation, explanation_id):
+
+        #カーソルオブジェクト呼び出し
+        cursor = self.connection.cursor()
+
+        #単語解説変更
+        try:
+            cursor.execute(query, (change_explanation, explanation_id))
+            self.connection.commit()
+        except Exception as e:
+            print("Exception error update_word_info()")
+            print(e)
+
+        finally:
+            cursor.close()
+
+        return "update success"
 
     #ログインユーザーもしくは単語idの存在確認(引数に、ユーザーidか、単語id)
     def check_loginduser_or_exsistedword(self, the_id):
