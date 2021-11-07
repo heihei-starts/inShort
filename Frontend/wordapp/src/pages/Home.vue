@@ -19,6 +19,7 @@ export default {
       return;
       //DBから検索した単語獲得
     },
+
   },
 };
 </script>

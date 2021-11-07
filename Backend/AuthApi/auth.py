@@ -24,6 +24,7 @@ from modules import authManageSql
 
 ##-初期設定-------------------------------
 app = Flask(__name__)
+print(os.getenv('JWT_SECRET_KEY'))
 app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 #CORS
 CORS(app, origins=["http://localhost:8080"])
@@ -93,7 +94,7 @@ def login():
     password = data.get('password')
     email   = data.get('email')    
 
-
+    print(password, email)
         
     #リクエストデータがない時
     if not password:
@@ -105,7 +106,9 @@ def login():
     #ログイン
     try:
         query = "SELECT user_name  from in_short.users where email= %s and pass = %s" 
+        print(query)
         result = sqlClass.check_user(query, email, password)
+        print(result)
     except Exception as e:
         print("Exception error login")
         print(e)
@@ -118,7 +121,9 @@ def login():
         return jsonify(body), 401
 
     #token作成
-    token = create_access_token(identity=result)
+    token = create_access_token(identity=email)
+
+    print(token)
     
     #return
     body = {'message': "ログイン成功", 'token': token}

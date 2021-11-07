@@ -9,6 +9,7 @@ class WordManageSql(ObjectManageSql):
     def selectAllWords(self, query):
         
         #カーソルオブジェクト(DBを管理するオブジェクト) 呼び出し
+        #dic型で受け取る
         cursor  = self.connection.cursor()
         
         #全件取得

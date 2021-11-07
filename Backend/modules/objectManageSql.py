@@ -21,7 +21,8 @@ class ObjectManageSql(object):
            port     = self.__port,
            user     = self.__user,
            password = self.__password,
-           db       = self.__db)
+           db       = self.__db,
+           cursorclass=pymysql.cursors.DictCursor)
 
     
 
