@@ -20,6 +20,7 @@ export default {
       //DBから検索した単語獲得
     },
 
+
   },
 };
 </script>

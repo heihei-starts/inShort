@@ -18,29 +18,40 @@ app = Flask(__name__)
 CORS(app, origins=["http://localhost:8080"])
 
 #単語解説取得API
-@app.route("/", methods=['GET'])
+@app.route("/", methods=['POST'])
 def get_words_info():
     
+    data = request.get_json(force=True)
+    word_id = data.get('word_id', None)
+
+    print(word_id)
     #sqlオブジェクト呼び出し
     sqlClass = wordInfoManageSql.WordInfoManageSql()
     
     #単語と一致する解説全件取得
     try:
-        query = "SELECT explanations, user_id from in_short.explanation where word_id = %s"
+        query = 'SELECT e.explanations, e.word_id, e.user_id, count(l.explanation_id) as "いいね数"'\
+                ' FROM in_short.explanation e '\
+                ' INNER JOIN in_short.likes l'\
+                ' ON e.id = l.explanation_id'\
+                ' WHERE e.word_id =  %s'\
+                ' GROUP BY e.id;'
 
         result = sqlClass.get_words_info(query, word_id)
+
+        print(result)
 
         body = {'message': "単語解説取得完了", "explanations": result}
 
     except Exception as e:
-        print(Exception get_words_info)
+        print("Exception get_words_info")
         print(e)
 
     finally:
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), HTTP_OK
+    return jsonify(body), 200
 
 #単語解説追加
 @app.route("/", methods=['POST'])
@@ -72,7 +83,7 @@ def post_word_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), HTTP_OK
+    return jsonify(body),200 
 #単語解説削除
 @app.route("/", methods=['DELETE'])
 def delete_word_info():
@@ -101,7 +112,7 @@ def delete_word_info():
         sqlClass.closeConnection()
 
     #return
-     return jsonify(body), HTTP_OK
+    return jsonify(body), 200
 
 #単語解説改稿
 @app.route("/", methods=['PUT'])
@@ -131,7 +142,7 @@ def update_word_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), HTTP_OK
+    return jsonify(body), 200
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
 

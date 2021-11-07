@@ -89,7 +89,7 @@ class WordInfoManageSql(ObjectManageSql):
     def check_loginduser_or_exsistedword(self, the_id):
 
         #カーソルオブジェクト呼び出し
-        cursor = self.connection.cursor()c
+        cursor = self.connection.cursor()
 
         #ユーザか、単語の存在チェック
         try:
