@@ -61,15 +61,17 @@ def get_like():
     #リクエストを受け取る
     data = request.get_json()
     #リクエストデータ分割
+    #単語id
+    word_id = data.get('word_id', None)
     #解説ID
     explanation_id = data.get('explanation_id', None)
-
+    
     #いいね取得
     try:
         #countする
-        query = ""
+        query = "SELECT explanation_id, COUNT(explanation_id) FROM in_short.likes WHERE word_id = %s GROUP BY explanation_id;"
 
-        result = sqlClass.getLike(query, explanation_id)
+        result = sqlClass.getLike(query, word_id, explanation_id)
 
         body = {'message': "いいね取得", 'like': result}
 
