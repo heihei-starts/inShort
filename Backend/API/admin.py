@@ -19,7 +19,7 @@ CORS(app, origins=["http://localhost:8080"])
 
 #単語削除API
 @app.route("/")
-def post_word_info():
+def delete_word_info():
 
     #wordManageInfoSQLオブジェクト呼び出し
     sqlClass = adminManageSql.AdmingManageSql()
@@ -30,21 +30,21 @@ def post_word_info():
     
     #単語削除
     try:
-        query = "delete from in_short.words where word_name = %s; AND field_id = %s"
 
-        result = sqlClass.delete_word(query, word_name, field_id)
+        result = sqlClass.delete_word(word_name, field_id)
 
         body = {'message': result}
 
         return jsonify(body), HTTP_OK
     
     except Exception as e:
-        print("Exception error post_word_info")
+        print("Exception error delete_word_info")
         print(e)
 
     finally:
         #コネクション接続解除
         sqlClass.closeConnection()
+
 
 
 

@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from datetime import timedelta
 import os
 import sys
-
 from flask_jwt_extended import (
     jwt_required,
     create_access_token,
@@ -57,13 +56,11 @@ def register():
 
     #DBに登録済みではないか確認
     try:
-        query1 = "SELECT user_name from in_short.users where email = %s and pass = %s"
-        result = sqlClass.check_user(query1, email, password)
+        result = sqlClass.check_user(email, password)
        #登録済みであれば、401。登録済みでなければ、dbに登録
         if result is None:
-            query2 = "INSERT INTO in_short.users(user_name, email, pass) values (%s,%s,%s)"
 
-            register_success = sqlClass.insert_user(query2, name, email, password)
+            register_success = sqlClass.insert_user(name, email, password)
 
         
         else:
@@ -105,10 +102,7 @@ def login():
     sqlClass = authManageSql.AuthManageSql() 
     #ログイン
     try:
-        query = "SELECT user_name  from in_short.users where email= %s and pass = %s" 
-        print(query)
-        result = sqlClass.check_user(query, email, password)
-        print(result)
+        result = sqlClass.check_user(email, password)
     except Exception as e:
         print("Exception error login")
         print(e)

@@ -6,13 +6,15 @@ class AdminManageSql(ObjectManageSql):
 
 
     #単語削除(admin)
-    def delete_word(self, query, word_name, field_id):
+    def delete_word(self, word_name, field_id):
 
         #カーソルオブジェクト呼び出し
         cursor = self.connection.cursor()
 
         #単語削除
         try:
+            query = "delete from in_short.words where word_name = %s; AND field_id = %s"
+
             cursor.execute(query,(word_name. field_id))
             result = self.connection.commit()
             #削除するものがない時

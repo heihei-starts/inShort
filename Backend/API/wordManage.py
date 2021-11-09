@@ -29,8 +29,7 @@ def get_words():
     sqlClass = WordManageSql()
     #全件取得
     try:
-        query = "SELECT word_name,field_id from in_short.words; "
-        result = sqlClass.selectAllWords(query)
+        result = sqlClass.selectAllWords()
         print(result)
         body = {'message': "全件取得完了", "words": result}
         return jsonify(body),HTTP_OK
@@ -64,8 +63,7 @@ def post_word():
 
     #単語追加
     try:
-        query = "INSERT INTO in_short.words (word_name, field_id) VALUES (%s,%s);"
-        result = sqlClass.insert_word(query, word_name, field_id)
+        result = sqlClass.insert_word(word_name, field_id)
 
         body = {'message': '単語追加完了'}
         return jsonify(body), HTTP_OK

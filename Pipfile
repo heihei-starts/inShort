@@ -14,3 +14,6 @@ flask-jwt-extended = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+command1 = "pipenv run WordManage.py"
