@@ -17,6 +17,12 @@ app = Flask(__name__)
 #CORS
 CORS(app, origins=["http://localhost:8080"])
 
+HTTP_OK = 200
+Created = 201
+Bad_Request = 400
+Unauthorized = 401
+Internal_Server_Error = 500
+
 #単語解説取得API
 @app.route("/", methods=['POST'])
 def get_words_info():
@@ -44,7 +50,7 @@ def get_words_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), 200
+    return jsonify(body),HTTP_OK 
 
 #単語解説追加
 @app.route("/", methods=['POST'])
@@ -75,7 +81,7 @@ def post_word_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body),200 
+    return jsonify(body),Created
 
 #単語解説削除
 @app.route("/", methods=['DELETE'])
@@ -105,7 +111,7 @@ def delete_word_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), 200
+    return jsonify(body),HTTP_OK 
 
 #単語解説改稿
 @app.route("/", methods=['PUT'])
@@ -134,7 +140,7 @@ def update_word_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), 200
+    return jsonify(body), HTTP_OK
 
 
 if __name__ == "__main__":

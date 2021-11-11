@@ -12,6 +12,12 @@ app = Flask(__name__)
 
 CORS(app, origins=["http://localhost:8080"])
 
+HTTP_OK = 200
+Created = 201
+Bad_Request = 400
+Unauthorized = 401
+Internal_Server_Error = 500
+
 
 @app.route("/", methods=[''])
 def get_user_info():
@@ -36,5 +42,5 @@ def get_user_info():
     finally:
         sqlClass.closeConnection()
      
-     return jsonify(body), 200
+     return jsonify(body), HTTP_OK
 

@@ -29,8 +29,15 @@ app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 CORS(app, origins=["http://localhost:8080"])
 
 
+
+#ステータスコード
+HTTP_OK = 200
+Created = 201
+Bad_Request = 400
+Unauthorized = 401
+Internal_Server_Error = 500
 def jwt_unauthorized_loader_handler(reason):
-    return jsonify({'message': 'Unauthorized'}), 401
+    return jsonify({'message': 'Unauthorized'}), Unauthorized
 
 
 #token
@@ -66,7 +73,7 @@ def register():
         else:
             body = {'message': "すでに登録済みです。"}
 
-            return jsonify(body), 400
+            return jsonify(body), Bad_Request
             
 
     except Exception as e:
@@ -79,7 +86,7 @@ def register():
     
     #return
     body = {'message': "登録成功"}
-    return jsonify(body), 200
+    return jsonify(body), Created
 
     #sessionにデータ格納
 #ログインapi
@@ -112,7 +119,7 @@ def login():
     #resultに値がない時
     if result is None:
         body = {'message': '登録されていません。'}
-        return jsonify(body), 401
+        return jsonify(body), Unauthorized
 
     #token作成
     token = create_access_token(identity=email)
@@ -121,8 +128,7 @@ def login():
     
     #return
     body = {'message': "ログイン成功", 'token': token}
-    return jsonify(body), 200
-
+    return jsonify(body), HTTP_OK
 
 
 

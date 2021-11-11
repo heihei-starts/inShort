@@ -10,9 +10,6 @@ sys.path.append(os.path.abspath(".."))
 
 #modules呼び出し
 from modules.wordManageSql import WordManageSql
-#ステータスコード 
-HTTP_OK = 200
-HTTP_BAD_REQUEST = 400
 
 app = Flask(__name__)
 
@@ -20,6 +17,12 @@ app = Flask(__name__)
 CORS(app, origins=["http://localhost:8080"])
 #-------------------------------------------------------########
 
+#ステータスコード 
+HTTP_OK = 200
+Created = 201
+Bad_Request = 400
+Unauthorized = 401
+Internal_Server_Error = 500
 
 #単語取得API
 @app.route("/", methods=['GET'])
@@ -66,7 +69,7 @@ def post_word():
         result = sqlClass.insert_word(word_name, field_id)
 
         body = {'message': '単語追加完了'}
-        return jsonify(body), HTTP_OK
+        return jsonify(body), Created 
 
     except Exception as e:
         print("Exception error post_word")

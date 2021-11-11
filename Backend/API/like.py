@@ -47,7 +47,7 @@ def add_like():
         sqlClass.closeConnection()
 
     
-    return jsonify(body), 200
+    return jsonify(body), Created
     
 
 #いいね取得
@@ -80,7 +80,7 @@ def get_like():
     finally:
         sqlClass.closeConnection()
     
-    return jsonify(body), 200
+    return jsonify(body), HTTP_OK 
 
 
 
@@ -113,7 +113,7 @@ def delete_like():
         sqlClass.closeConnection()
 
     
-    return jsonify(body), 200
+    return jsonify(body), HTTP_OK
 
 
 

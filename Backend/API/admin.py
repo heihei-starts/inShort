@@ -16,6 +16,19 @@ app = Flask(__name__)
 
 CORS(app, origins=["http://localhost:8080"])
 
+#ステータスコード 
+#リクエストが成功
+HTTP_OK = 200
+#リクエストが成功し、その結果新たなリソースが作成された
+Created = 201
+#構文が、無効。サーバーがリクエストを理解できない
+Bad_Request = 400
+#認証が必要
+Unauthorized = 401
+#サーバー側で、処理方法がわからない事態
+Internal Server Error = 500
+#
+
 
 #単語削除API
 @app.route("/")
