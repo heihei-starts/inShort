@@ -23,7 +23,7 @@ Internal_Server_Error = 500
 def get_user_info():
 
     #リクエスト取得
-    data = request.get_json(force=True))    
+    data = request.get_json(force=True)    
     #各データ取得
     user_id = data.get('user_id', None)
     
@@ -42,5 +42,7 @@ def get_user_info():
     finally:
         sqlClass.closeConnection()
      
-     return jsonify(body), HTTP_OK
+    return jsonify(body), HTTP_OK
 
+if __name__ == "__main__":
+    app.run(debug=True, port=5004)

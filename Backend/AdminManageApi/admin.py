@@ -26,7 +26,7 @@ Bad_Request = 400
 #認証が必要
 Unauthorized = 401
 #サーバー側で、処理方法がわからない事態
-Internal Server Error = 500
+Internal_Server_Error = 500
 #
 
 
