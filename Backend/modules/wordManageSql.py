@@ -6,12 +6,13 @@ class WordManageSql(ObjectManageSql):
 
     
     #単語取得
-    def selectAllWords(self, query):
+    def selectAllWords(self):
         
         #カーソルオブジェクト(DBを管理するオブジェクト) 呼び出し
         #dic型で受け取る
         cursor  = self.connection.cursor()
-        
+       
+        query = "SELECT word_name,field_id from in_short.words; "
         #全件取得
         try:
             cursor.execute(query)
@@ -31,14 +32,14 @@ class WordManageSql(ObjectManageSql):
     #単語追加(adminにあとで移動。)
     
     #引数に、単語と単語のジャンル
-    def insert_word(self, query, word, field_id):
+    def insert_word(self, word, field_id):
 
         #カーソルオブジェクト呼び出し
         cursor = self.connection.cursor()
         
         #単語追加
         try:
-            
+            query = "INSERT INTO in_short.words (word_name, field_id) VALUES (%s,%s);" 
             cursor.execute(query,(word, field_id))
             self.connection.commit()
         except Exception as e:

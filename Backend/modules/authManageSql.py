@@ -4,12 +4,13 @@ from modules.objectManageSql import ObjectManageSql
 class AuthManageSql(ObjectManageSql):
 
     #ユーザー登録
-    def insert_user(self, query, name, email, password):
+    def insert_user(self, name, email, password):
 
         cursor = self.connection.cursor()
 
         #ユーザー登録
         try:
+            query = "INSERT INTO in_short.users(user_name, email, pass) values (%s,%s,%s)"
             cursor.execute(query, (name, email, password))
             
             self.connection.commit()
@@ -25,11 +26,12 @@ class AuthManageSql(ObjectManageSql):
 
 
     #登録済みか確認
-    def check_user(self, query, email, password):
+    def check_user(self, email, password):
 
         cursor = self.connection.cursor()
 
         try:
+            query1 = "SELECT user_name from in_short.users where email = %s and pass = %s"
             cursor.execute(query, (email, password))
 
             result = cursor.fetchone()

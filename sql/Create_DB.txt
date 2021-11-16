@@ -54,3 +54,27 @@
 -- primary key(user_id, explanation_id)
 -- );
 
+-- ###単語ジャンル追加
+-- insert into in_short.word_fields(field_name) values ("Linux");
+-- insert into in_short.word_fields(field_name) values ("Network");
+-- insert into in_short.word_fields(field_name) values ("Web");
+-- insert into in_short.word_fields(field_name) values ("Programming");
+-- insert into in_short.word_fields(field_name) values ("Security");
+-- insert into in_short.word_fields(field_name) values ("DataScience");
+
+-- ###単語追加
+-- insert into in_short.words (word_name,field_id) values ("Linux",1);
+-- insert into in_short.words (word_name,field_id) values ("OSI参照モデル",2);
+
+-- ###ユーザー追加
+-- insert into in_short.users (user_name, email, pass) values ("入江凌平", "hogehogeemail@fuga.com", "heiheihei");
+
+-- INSERT INTO in_short.explanation (explanations, word_id, user_id) VALUES ("リーナスが作りました。", 1, 1);
+-- INSERT INTO in_short.explanation (explanations, word_id, user_id) VALUES ("OSSです。", 1, 1);
+-- INSERT INTO in_short.explanation (explanations, word_id, user_id) VALUES ("unix系です。", 1, 1);
+-- INSERT INTO in_short.explanation (explanations, word_id, user_id) VALUES ("AndroidのOSに使用されています。", 1, 1);
+-- INSERT INTO in_short.explanation (explanations, word_id, user_id) VALUES ("コマンド操作がかっこいいです。", 1, 1);
+
+#INSERT INTO in_short.explanation (explanations, word_id, user_id) VALUES ("ネットワーク構造の標準化されている構造です。", 5, 1);
+#INSERT INTO in_short.explanation (explanations, word_id, user_id) VALUES ("7そうあります。", 5, 1);
+#INSERT INTO in_short.explanation (explanations, word_id, user_id) VALUES ("7層は、アプリケーション層です。", 5, 1);

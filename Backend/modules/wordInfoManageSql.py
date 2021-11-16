@@ -5,13 +5,19 @@ class WordInfoManageSql(ObjectManageSql):
 
     
     #単語情報取得
-    def get_words_info(self, query, word_id):
+    def get_words_info(self, word_id):
 
         #カーソルオブジェクト呼び出し
         cursor = self.connection.cursor()
 
         #単語解説取得
         try:
+            query = 'SELECT e.explanations, e.word_id, e.user_id, count(l.explanation_id) as "いいね数"'\
+                    ' FROM in_short.explanation e '\
+                    ' INNER JOIN in_short.likes l'\
+                    ' ON e.id = l.explanation_id'\
+                    ' WHERE e.word_id =  %s'\
+                    ' GROUP BY e.id;'
             cursor.execute(query, (word_id))
             result = cursor.fetchall()
         except Exception as e:
@@ -23,13 +29,14 @@ class WordInfoManageSql(ObjectManageSql):
         return result
 
     #単語情報投稿
-    def post_word_info(self, query, user_id, word_id, explanation):
+    def post_word_info(self, user_id, word_id, explanation):
 
         #カーソルオブジェクト呼び出し
         cursor = self.connection.cursor()
         
         #単語解説登録
         try:
+            query = "INSERT INTO in_short.explanation('explanations', 'word_id', 'user_id')"
             #トランザクションしたい
             cursor.execute(query, (user_id, word_id, explanation))
             self.connection.commit()
@@ -48,13 +55,14 @@ class WordInfoManageSql(ObjectManageSql):
     
 
     #単語情報削除
-    def delete_word_info(self, query,  explanation_id):
+    def delete_word_info(self, explanation_id):
 
         #カーソルオブジェクト呼び出し
         cursor = self.connection.cursor()
 
         #単語解説削除
         try:
+            query = "DELETE FROM in_short.explanation where id = %s"
             cursor.execute(query, (explanation_id))
             self.connection.commit()
         except Exception as e:
@@ -67,13 +75,15 @@ class WordInfoManageSql(ObjectManageSql):
         return "delete success"
 
     #単語情報改稿
-    def update_word_info(self, query, change_explanation, explanation_id):
+    def update_word_info(self, change_explanation, explanation_id):
 
         #カーソルオブジェクト呼び出し
         cursor = self.connection.cursor()
 
         #単語解説変更
         try:
+            query = "UPDATE in_short.explanation SET explanations = %s where id = %s"
+
             cursor.execute(query, (change_explanation, explanation_id))
             self.connection.commit()
         except Exception as e:

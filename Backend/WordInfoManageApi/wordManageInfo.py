@@ -17,6 +17,12 @@ app = Flask(__name__)
 #CORS
 CORS(app, origins=["http://localhost:8080"])
 
+HTTP_OK = 200
+Created = 201
+Bad_Request = 400
+Unauthorized = 401
+Internal_Server_Error = 500
+
 #単語解説取得API
 @app.route("/", methods=['POST'])
 def get_words_info():
@@ -30,14 +36,7 @@ def get_words_info():
     
     #単語と一致する解説全件取得
     try:
-        query = 'SELECT e.explanations, e.word_id, e.user_id, count(l.explanation_id) as "いいね数"'\
-                ' FROM in_short.explanation e '\
-                ' INNER JOIN in_short.likes l'\
-                ' ON e.id = l.explanation_id'\
-                ' WHERE e.word_id =  %s'\
-                ' GROUP BY e.id;'
-
-        result = sqlClass.get_words_info(query, word_id)
+        result = sqlClass.get_words_info(word_id)
 
         print(result)
 
@@ -51,7 +50,7 @@ def get_words_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), 200
+    return jsonify(body),HTTP_OK 
 
 #単語解説追加
 @app.route("/", methods=['POST'])
@@ -70,9 +69,8 @@ def post_word_info():
 
     #解説追加
     try:
-        query = "INSERT INTO in_short.explanation('explanations', 'word_id', 'user_id')"
 
-        result = sqlClass.post_word_info(query, user_id, word_id, explanation)
+        result = sqlClass.post_word_info(user_id, word_id, explanation)
 
         body = {"message": "解説追加完了"}
     except Exception as e:
@@ -83,7 +81,8 @@ def post_word_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body),200 
+    return jsonify(body),Created
+
 #単語解説削除
 @app.route("/", methods=['DELETE'])
 def delete_word_info():
@@ -99,9 +98,9 @@ def delete_word_info():
 
     #解説削除
     try:
-        query = "DELETE hogehoge"
+        query = "DELETE FROM in_short.explanation where id = %s"
 
-        result = sqlClass.delete_word_info(query, explanation_id)
+        result = sqlClass.delete_word_info(explanation_id)
 
         body = {'message': '解説削除完了'}
     except Exception as e:
@@ -112,7 +111,7 @@ def delete_word_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), 200
+    return jsonify(body),HTTP_OK 
 
 #単語解説改稿
 @app.route("/", methods=['PUT'])
@@ -130,8 +129,7 @@ def update_word_info():
 
     #解説改稿
     try:
-        query = "UPDATE hogehgoe"
-        result = sqlClass.update_word_info(query, change_explanation, explanation_id)
+        result = sqlClass.update_word_info(change_explanation, explanation_id)
 
         body = {'message': '解説改稿完了'}
     except Exception as e:
@@ -142,7 +140,9 @@ def update_word_info():
         sqlClass.closeConnection()
 
     #return
-    return jsonify(body), 200
+    return jsonify(body), HTTP_OK
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=5001)
 

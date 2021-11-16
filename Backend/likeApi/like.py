@@ -34,8 +34,7 @@ def add_like():
     
     #sql文を介して、DBにアクセス。いいね追加
     try:
-        query = "INSERT INTO in_short.likes (user_id, explanation_id) VALUES (%s,%s);"
-        result = sqlClass.postLike(query, user_id, explanation_id)
+        result = sqlClass.postLike(user_id, explanation_id)
 
         body = {'message': "いいね完了"}
 
@@ -48,7 +47,7 @@ def add_like():
         sqlClass.closeConnection()
 
     
-    return jsonify(body), 200
+    return jsonify(body), Created
     
 
 #いいね取得
@@ -69,9 +68,8 @@ def get_like():
     #いいね取得
     try:
         #countする
-        query = "SELECT explanation_id, COUNT(explanation_id) FROM in_short.likes WHERE word_id = %s GROUP BY explanation_id;"
 
-        result = sqlClass.getLike(query, word_id, explanation_id)
+        result = sqlClass.getLike(word_id, explanation_id)
 
         body = {'message': "いいね取得", 'like': result}
 
@@ -82,7 +80,7 @@ def get_like():
     finally:
         sqlClass.closeConnection()
     
-    return jsonify(body), 200
+    return jsonify(body), HTTP_OK 
 
 
 
@@ -102,8 +100,7 @@ def delete_like():
     
     #sql文を介して、DBにアクセス。いいね追加
     try:
-        query = ""
-        result = sqlClass.postLike(query, user_id, explanation_id)
+        result = sqlClass.postLike(user_id, explanation_id)
 
         body = {'message': "いいね削除完了"}
 
@@ -116,7 +113,7 @@ def delete_like():
         sqlClass.closeConnection()
 
     
-    return jsonify(body), 200
+    return jsonify(body), HTTP_OK
 
 
 
