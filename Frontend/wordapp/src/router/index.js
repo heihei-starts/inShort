@@ -5,6 +5,7 @@ import About from '../pages/About.vue'
 import Login from '../pages/Login.vue'
 import Register from '../pages/Register.vue'
 import Explain from '../pages/Explain.vue'
+import User from '../pages/User.vue'
 import store from '../store'
 
 Vue.use(VueRouter)
@@ -55,6 +56,11 @@ const routes = [
     path: '/explain',
     name: 'Explain',
     component: Explain,
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: User
   }
 ]
 
