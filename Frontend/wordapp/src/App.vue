@@ -5,6 +5,8 @@
       <router-link to="/about" class="header--link">マイページ</router-link>
       <router-link to="/login" class="header--link">ログイン</router-link>
       <router-link to="/register" class="header--link">新規登録</router-link>
+      <router-link to="/user" class="header--link">ユーザー画面</router-link>
+
     </header>
     <router-view></router-view>
   </div>

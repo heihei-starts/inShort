@@ -91,8 +91,12 @@ def login():
     
     #リクエストデータを受け取る
     data = request.get_json(force=True)
-    password = data.get('password')
-    email   = data.get('email')    
+    password = data.get('password', None)
+    email   = data.get('email', None)    
+    
+    if password is None or email is None:
+        body = {'message': "正しくないログインです。。"}
+        return jsonify(body, 401)
 
     print(password, email)
         
