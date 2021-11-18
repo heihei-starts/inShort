@@ -33,7 +33,7 @@ export default {
         const token = response.data.token
         console.log(token)
 
-        this.$cookies.set('updateIdToken', token)
+        this.$cookies.set('token', token)
         //location.reload()
       } catch (err) {
         console.log(err)
