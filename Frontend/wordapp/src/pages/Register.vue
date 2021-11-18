@@ -3,6 +3,10 @@
     <h2>新規登録</h2>
     <form class="login-form">
       <div class="input-group">
+        <label for="name">名前</label>
+        <input type="name" id="name" v-model="name" />
+      </div>
+      <div class="input-group">
         <label for="email">メールアドレス</label>
         <input type="email" id="email" v-model="email" />
       </div>
@@ -23,6 +27,7 @@ import axios from "../axios-for-auth.js"; //axiosのインスタンスをイン�
 export default {
   data() {
     return {
+      name: "",
       email: "",
       password: "",
     };
@@ -31,14 +36,14 @@ export default {
     register() {
       //axiosでapiを叩くメソッドを定義
       axios
-        .post("/accounts:signUp?key=AIzaSyAnhZpWVg_cweTrgCMli-aQNbkhCo6zWNA", {
+        .post("http://localhost:5002/register", {
+          name: this.name,
           email: this.email,
           password: this.password,
-          returnSecureToken: true,
         })
         .then((response) => {
-          this.$store.commit("updateIdToken", response.data.idToken); //追記
-          this.$router.push("/"); //追記
+          console.log(response)
+          this.$router.push("/login"); //追記
         });
       this.email = "";
       this.password = "";

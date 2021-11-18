@@ -31,7 +31,7 @@ class AuthManageSql(ObjectManageSql):
         cursor = self.connection.cursor()
 
         try:
-            query1 = "SELECT user_name from in_short.users where email = %s and pass = %s"
+            query = "SELECT user_name from in_short.users where email = %s and pass = %s"
             cursor.execute(query, (email, password))
 
             result = cursor.fetchone()

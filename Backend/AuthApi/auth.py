@@ -105,7 +105,7 @@ def login():
     print(password, email)
         
     #リクエストデータがない時
-    if not password:
+    if password is None or email is None:
         body = {'message': "正しく入力してください。"}
         return jsonify(body)
    
