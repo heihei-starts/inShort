@@ -9,10 +9,11 @@ class WordInfoManageSql(ObjectManageSql):
 
         #カーソルオブジェクト呼び出し
         cursor = self.connection.cursor()
-
+        print(word_id)
+        print(word_id)
         #単語解説取得
         try:
-            query = 'SELECT e.explanations, e.word_id, e.user_id, count(l.explanation_id) as "いいね数"'\
+            query = 'SELECT e.explanations, e.word_id, e.user_id, count(l.explanation_id) as "good"'\
                     ' FROM in_short.explanation e '\
                     ' INNER JOIN in_short.likes l'\
                     ' ON e.id = l.explanation_id'\

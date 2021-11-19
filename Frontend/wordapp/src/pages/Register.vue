@@ -1,24 +1,28 @@
 <template>
   <div class="container">
-    <h2>新規登録</h2>
-    <form class="login-form">
-      <div class="input-group">
-        <label for="name">名前</label>
-        <input type="name" id="name" v-model="name" />
-      </div>
-      <div class="input-group">
-        <label for="email">メールアドレス</label>
-        <input type="email" id="email" v-model="email" />
-      </div>
-      <div class="input-group">
-        <label for="password">パスワード</label>
-        <input type="password" id="password" v-model="password" />
-      </div>
-      <div class="input-group">
-        <b-button variant="primary" @click="register()">新規登録</b-button>
+    <div class="Head">
+      <h2 style="margin-top: 30px;">登録画面</h2>
+    </div>
+    <div class="form">
+      <div class="form-middle">
+        <div class="form-group">
+          <input type="text" class="form-control"  name="name" placeholder="名前を入力してください。" style="margin-top: 40px;" v-model="name">
+        </div>
 
+        <div class="form-group">
+          <input type="email" class="form-control" name="email" placeholder="メールアドレスを入力してください。" style="margin-top: 40px;" v-model="email">
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="パスワードを入力してください。" style="margin-top: 40px;" v-model="password">
+        </div>
+          
       </div>
-    </form>
+
+      <div class="form-bottom"> 
+          <button type="submit" class="btn btn-outline-dark" style="margin-top: 30px;" @click="register()">登録</button>
+      </div>
+    </div>
   </div>
 </template>
 

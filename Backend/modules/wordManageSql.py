@@ -12,7 +12,7 @@ class WordManageSql(ObjectManageSql):
         #dic型で受け取る
         cursor  = self.connection.cursor()
        
-        query = "SELECT word_name,field_id from in_short.words; "
+        query = "SELECT id,word_name,field_id from in_short.words; "
         #全件取得
         try:
             cursor.execute(query)

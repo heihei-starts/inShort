@@ -33,7 +33,7 @@ const routes = [
     name: 'Login',
     component: Login,
     beforeEnter(to, from, next) {
-      if (store.getters.idToken) {//すでにidTokenがあれば、"/"に飛ばす
+      if (Vue.$cookies.isKey('token')) {//すでにidTokenがあれば、"/"に飛ばす
         next("/");
       } else { //なければそのまま"/login"に
         next();
@@ -45,7 +45,7 @@ const routes = [
     name: 'Register',
     component: Register,
     beforeEnter(to, from, next) {
-      if (store.getters.idToken) {//すでにidTokenがあれば、"/"に飛ばす
+      if (Vue.$cookies.isKey('token')) {//すでにidTokenがあれば、"/"に飛ばす
         next("/");
       } else {//なければそのまま"/register"に
         next();
@@ -60,7 +60,14 @@ const routes = [
   {
     path: '/user',
     name: 'User',
-    component: User
+    component: User,
+    beforeEnter(to, from ,next) {
+      if (Vue.$cookies.isKey('token')) {
+        next()
+      } else {
+        next('login')
+      }
+    }
   }
 ]
 
