@@ -4,8 +4,12 @@
     <div class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="text" placeholder="Search" />
       <br />
-      <b-button variant="outline-success" @click="getWord()"> Search </b-button>
-      
+      <b-button variant="outline-success"> 用語検索 </b-button>
+      <ul style="list-style: none;">
+        <li v-for="word in words" :key="word.word_name">
+          <router-link to="/explain" style="text-decoration: none; color: black;" @click.native="setWordId(word.id, word.word_name)">{{word.word_name}}</router-link>
+        </li>
+      </ul>
       <!-- 単語一覧表示 -->
       <!-- DBの単語情報を表示  -->
     </div>
@@ -25,16 +29,32 @@ export default {
     };
   },
   methods: {
-    getWord() {
-      axios.get("//localhost:5000")
-      .then(response => {
-        this.words = response.data.words
-        console.log(response.data.words);
-        //DBから検索した単語獲得
+    async getWord() {
+      try {
+        const response = await axios.get("//localhost:5000")
+        console.log(response.data.words)
+        const info = response.data.words
+        const len = Object.keys(info).length
+        console.log(len)
+        console.log(info[0].field_id)
+        for (let i = 0; i< len; i ++) {
+          this.words.push({'id': info[i].id, 'field_id': info[i].field_id, 'word_name': info[i].word_name})
+        }
+      } catch(err) {
+        console.log(err)
       }
-      )
+        
+
     },
+    setWordId(word_id, word_name) {
+      this.$cookies.set('word_id', word_id)
+      this.$cookies.set('word_name', word_name)
+    }
+
   },
+  mounted: function() {
+    this.getWord()
+  }
 };
 </script>
 <style>
