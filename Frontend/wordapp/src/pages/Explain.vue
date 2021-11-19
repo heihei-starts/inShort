@@ -56,7 +56,7 @@ export default {
               {
                 word_id: id
               })
-        console.log(response.data.explanations[0].explanations)
+        console.log(response.data.explanations)
 
         const info = response.data.explanations
         const len = Object.keys(info).length

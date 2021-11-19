@@ -13,12 +13,13 @@ class WordInfoManageSql(ObjectManageSql):
         print(word_id)
         #単語解説取得
         try:
-            query = 'SELECT e.explanations, e.word_id, e.user_id, count(l.explanation_id) as "good"'\
-                    ' FROM in_short.explanation e '\
-                    ' INNER JOIN in_short.likes l'\
-                    ' ON e.id = l.explanation_id'\
-                    ' WHERE e.word_id =  %s'\
-                    ' GROUP BY e.id;'
+            # query = 'SELECT e.explanations, e.word_id, e.user_id, count(l.explanation_id) as "good"'\
+            #         ' FROM in_short.explanation e '\
+            #         ' OUTER JOIN in_short.likes l'\
+            #         ' ON e.id = l.explanation_id'\
+            #         ' WHERE e.word_id =  %s'\
+            #         ' GROUP BY e.id;'
+            query = 'SELECT explanations, word_id, user_id FROM in_short.explanation WHERE word_id = %s;'
             cursor.execute(query, (word_id))
             result = cursor.fetchall()
         except Exception as e:
